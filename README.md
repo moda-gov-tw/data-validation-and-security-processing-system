@@ -1,4 +1,4 @@
-# 資料檢核及安全處理模組
+# 資料檢核及安全處理系統
 
 ## 公共程式描述
 資料檢核及安全處理模組主要提供多樣的數據檢核與處理功能，包括敏感資料遮罩、資料編碼/解碼、以及檢核驗證功能，從而有效保障資料的正確性與安全性。該模組不僅可以幫助系統進行資料格式檢查，還能進行資料的轉換與安全處理，適用於資料處理、傳輸與保護等場景。
@@ -71,6 +71,7 @@ String formattedDate = DateUtils.format("2023-10-22", "yyyy-MM-dd", "dd/MM/yyyy"
 
 <img src="image/demoAfter.png" alt="處理後圖片" width="400">
 
-## License
-For open source projects, say how it is licensed.
-本專案採用 CC0 1.0 Universal (CC0 1.0) 公共領域貢獻 授權條款。詳細授權內容請參閱 LICENSE 文件。
+## 授權 (License)
+
+本專案採用 [MIT 授權](./LICENSE)。  
+詳細授權內容請參閱 [LICENSE](./LICENSE) 文件。
