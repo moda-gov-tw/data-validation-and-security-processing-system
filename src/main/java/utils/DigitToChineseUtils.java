@@ -20,6 +20,11 @@ public class DigitToChineseUtils {
         if ("null".equals(st_orgNm) || null == st_orgNm || StringUtils.equals("0", st_orgNm))
             return "零";
 
+        // 驗證輸入是否為正整數且小於指定範圍（避免過大數值）
+        if (!st_orgNm.matches("\\d+") || st_orgNm.length() > 10) {
+            throw new IllegalArgumentException("輸入數值無效或過大");
+        }
+
         Long orgNm = Long.valueOf(st_orgNm);
 
         String result = "";

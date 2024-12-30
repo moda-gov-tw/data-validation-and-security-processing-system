@@ -108,8 +108,7 @@ public class Main {
 
         // 添加按鈕的事件監聽器
         convertButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(final ActionEvent e) {
+            @Override public void actionPerformed(final ActionEvent e) {
                 final String inputText = userText.getText();
 
                 // 確保不為空且是有效的數字
@@ -119,6 +118,9 @@ public class Main {
                         final String mosaicText = DigitToChineseUtils.dollar2Chinese(inputText);
                         resultText.setText("結果: " + mosaicText);
                         resultText.setForeground(Color.BLACK); // 顯示黑色
+                    } catch (final IllegalArgumentException ex) {
+                        resultText.setText("輸入錯誤，數值無效或過大");
+                        resultText.setForeground(Color.RED); // 顯示紅色
                     } catch (final Exception ex) {
                         resultText.setText("輸入錯誤，請輸入有效數字");
                         resultText.setForeground(Color.RED); // 顯示紅色
@@ -140,9 +142,8 @@ public class Main {
             this.maxDigits = maxDigits;
         }
 
-        @Override
-        public void insertString(final FilterBypass fb, final int offset, final String string,
-                final AttributeSet attr) throws BadLocationException {
+        @Override public void insertString(final FilterBypass fb, final int offset, final String string, final AttributeSet attr)
+                throws BadLocationException {
             if (string == null) {
                 return;
             }
@@ -152,8 +153,7 @@ public class Main {
             }
         }
 
-        @Override
-        public void replace(final FilterBypass fb, final int offset, final int length, final String text,
+        @Override public void replace(final FilterBypass fb, final int offset, final int length, final String text,
                 final AttributeSet attrs) throws BadLocationException {
             if (text == null) {
                 return;
@@ -164,8 +164,7 @@ public class Main {
             }
         }
 
-        @Override
-        public void remove(final FilterBypass fb, final int offset, final int length) throws BadLocationException {
+        @Override public void remove(final FilterBypass fb, final int offset, final int length) throws BadLocationException {
             super.remove(fb, offset, length);
         }
     }
@@ -202,8 +201,7 @@ public class Main {
 
         // 添加按鈕的事件監聽器
         convertButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(final ActionEvent e) {
+            @Override public void actionPerformed(final ActionEvent e) {
                 final String inputText = userText.getText();
                 if (StringUtils.isNotBlank(inputText)) {
                     final String mosaicText = TextMaskUtils.mast(inputText);
@@ -249,8 +247,7 @@ public class Main {
         panel2.add(resultText);
 
         encodeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(final ActionEvent e) {
+            @Override public void actionPerformed(final ActionEvent e) {
                 final String inputText = userText.getText();
                 if (StringUtils.isNotBlank(inputText)) {
                     final String encodedText = Base64.getEncoder().encodeToString(inputText.getBytes(StandardCharsets.UTF_8));
@@ -264,8 +261,7 @@ public class Main {
         });
 
         decodeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(final ActionEvent e) {
+            @Override public void actionPerformed(final ActionEvent e) {
                 try {
                     final String inputText = userText.getText();
                     if (StringUtils.isNotBlank(inputText)) {
@@ -316,8 +312,7 @@ public class Main {
 
         // 添加按鈕的事件監聽器
         convertButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(final ActionEvent e) {
+            @Override public void actionPerformed(final ActionEvent e) {
                 final String inputText = userText.getText();
                 if (StringUtils.isNotBlank(inputText)) {
                     final BANFormatterValidator instance = BANFormatterValidator.getInstance();
@@ -365,8 +360,7 @@ public class Main {
 
         // 添加按鈕的事件監聽器
         convertButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(final ActionEvent e) {
+            @Override public void actionPerformed(final ActionEvent e) {
                 final String inputText = userText.getText();
                 if (StringUtils.isNotBlank(inputText)) {
                     final IDNFormatterValidator instance_idn = IDNFormatterValidator.getInstance();
@@ -414,8 +408,7 @@ public class Main {
 
         // 添加按鈕的事件監聽器
         convertButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(final ActionEvent e) {
+            @Override public void actionPerformed(final ActionEvent e) {
                 final String inputText = userText.getText();
                 if (StringUtils.isNotBlank(inputText)) {
                     final DATEFormatterValidator dateValidator = DATEFormatterValidator.getInstance();
