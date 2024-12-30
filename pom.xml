@@ -17,12 +17,20 @@
 
     <dependencies>
         <!-- Apache Commons Lang -->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.commons</groupId>-->
+<!--            <artifactId>commons-lang3</artifactId>-->
+<!--            <version>3.12.0</version> &lt;!&ndash; 使用最新版本 &ndash;&gt;-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.12.0</version> <!-- 使用最新版本 -->
+            <version>3.12.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/commons-lang3-3.12.0.jar</systemPath>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <!-- Maven Shade Plugin -->
